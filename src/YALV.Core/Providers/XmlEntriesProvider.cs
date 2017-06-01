@@ -76,7 +76,7 @@ namespace YALV.Core.Providers
 		                                                if (!name.StartsWith("log4net:"))
 		                                                {
 															var val = xmlTextReader.GetAttribute("value");
-															entry.CustomFields.Add(name, val);
+															entry.CustomFields.Add(name.Replace(" ",""), val);
 														}
 														break;
                                                 }
