@@ -289,6 +289,10 @@
       <Project>{d8efa045-5482-4bba-a1bf-28667d5f4635}</Project>
       <Name>YALV.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YALV.RichHtmlTextBlock\YALV.RichHtmlTextBlock.csproj">
+      <Project>{9013f480-05d7-41ba-947b-ba3ee16f6b2f}</Project>
+      <Name>YALV.RichHtmlTextBlock</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

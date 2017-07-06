@@ -5,6 +5,7 @@
     xmlns:converters="clr-namespace:YALV.Common.Converters"
     xmlns:local="clr-namespace:YALV.Common" xmlns:Properties="clr-namespace:YALV.Properties"
     xmlns:yalv="clr-namespace:YALV" Style="{StaticResource DefaultWindowStyle}"
+    xmlns:uc="clr-namespace:Microsoft.Windows.Controls;assembly=YALV.RichHtmlTextBlock"
     Height="650"
     Width="1250"
     Title="{Binding Path=WindowTitle, Mode=OneWay}"
@@ -12,6 +13,7 @@
     AllowDrop="True">
 
     <Window.Resources>
+        <uc:HtmlFormatter x:Key="HtmlFormatter" />
         <converters:BoolToOppositeVisibilityConverter
             x:Key="BoolToOppositeVisibilityConverter" />
         <converters:BoolToVisibilityConverter
@@ -989,13 +991,20 @@
                         <ScrollViewer
                             HorizontalScrollBarVisibility="Disabled"
                             VerticalScrollBarVisibility="Auto">
-                            <TextBox
+                            <!--<TextBox
                                 BorderBrush="Silver"
                                 BorderThickness="0,1"
                                 IsReadOnly="True"
                                 Text="{Binding Path=SelectedLogItem.Message, Mode=OneWay}"
                                 TextWrapping="Wrap">
-                            </TextBox>
+                            </TextBox>-->
+                            <uc:RichTextBox 
+                                BorderBrush="Silver"
+                                BorderThickness="0,1"
+                                IsReadOnly="False"
+                                TextFormatter="{StaticResource HtmlFormatter}"
+                                Text="{Binding Path=SelectedLogItem.Message, Mode=OneWay}">
+                            </uc:RichTextBox>
                         </ScrollViewer>
                     </DockPanel>
 
